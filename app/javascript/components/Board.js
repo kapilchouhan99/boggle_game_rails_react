@@ -8,8 +8,6 @@ const Board = ({ letters }) => {
     return <Letter letter={letter} key={idx} x={idx%4} y={Math.floor(idx/4)}/>
   })
 
-
-
   return (
     <div className="board-container">
       <div className="board">
@@ -17,7 +15,6 @@ const Board = ({ letters }) => {
       </div>
     </div>
   )
-
 }
 
 export default Board

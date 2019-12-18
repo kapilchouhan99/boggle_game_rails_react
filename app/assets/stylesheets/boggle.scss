@@ -17,8 +17,8 @@
 }
 
 .letter {
-  background-color: cyan;
-  border: 10px solid #0E7798;
+  background-color: white;
+  border: 5px solid #0E7798;
   font-size: 60px;
   max-width:100px;
   max-height:100px;
@@ -26,33 +26,44 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .input-form {
   margin-top: 25px;
-  margin-left: 25px;
 }
 
 .board-container {
-  margin-left: 25px;
-  float: left;
+  margin-left: 428px;
+}
+
+.form-container {
+  text-align: center;
 }
 
 .error-message {
-  width: 50%;
   margin-left: 15px;
-  float: left;
 }
 
-.word-list, .highscore-list {
-  width: 30%;
+.word-list {
+  width: 25%;
   margin-left: 18px;
+}
+
+.highscore-list {
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 25px;
+}
+
+.word-list {
   float: left;
 }
 
 .list-title, .highscore-title {
   background-color: cyan;
+  text-align: center;
+  height: 30px;
 }
 
 ul {
@@ -66,17 +77,20 @@ ul li {
 }
 
 .start-button {
-  margin: 10px 0px 18px 28px;
+  text-align: center;
+  margin-top: 10px;
 }
 
+.end-button {
+  float: right;
+  margin-right: 15px;
+}
 
 .end-game {
-  grid-column: 4 / 10;
-  grid-row: 1;
   top:0%;
   left:50%;
   width:400px;
-  height:400px;
+  height:275px;
   margin-left:-200px;
   margin-top:-200px;
   display: block;
@@ -85,10 +99,12 @@ ul li {
   background-color: white;
   margin-top: 75px;
   margin-bottom: 75px;
-  padding-top: 75px;
+  padding: 50px 24px 0 24px;
   border: 2px solid black;
   box-shadow: 10px 10px 5px #888888;
   position: absolute;
+  font-family: initial;
+  background: cyan;
 }
 
 .high-score-list {
@@ -97,5 +113,36 @@ ul li {
 
 .highscore-ul {
   background-color: lightblue;
-  float: left;
+}
+
+.form, .score-section {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 27%;
+}
+
+.score-section {
+  border: 2px solid #008CBA;
+  width: 104px;
+  height: 36px;
+  text-align: center;
+  padding: 5px 0 0 0;
+  margin: 0 0 0px 9px;
+  border-radius: 20px
+}
+
+.header {
+  background: cadetblue;
+  text-align: center;
+  height: 58px;
+  font-style: italic;
+  font-family: serif;
+  color: currentColor;
+}
+
+.timer {
+  text-align: center;
+  color: red;
+  background: black;
+  margin-bottom: 18px;
 }

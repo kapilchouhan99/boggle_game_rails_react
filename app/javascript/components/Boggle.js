@@ -22,8 +22,9 @@ class Boggle extends React.Component {
     };
   }
 
-  togglePopup = () => {  
-    this.setState({ showPopup: !this.state.showPopup });  
+  togglePopup = () => {
+    clearInterval(this.state.intervalId)
+    this.setState({ showPopup: !this.state.showPopup }); 
   }  
 
   startGame = () => {
@@ -54,7 +55,7 @@ class Boggle extends React.Component {
   }
   
   handleWord = (word) => {
-    if (!this.checkWordLength(word)) return false
+    // if (!this.checkWordLength(word)) return false
     if (!this.checkDuplicateWord(word)) return false
     if (!this.checkWordExists(word)) return false
   }
@@ -75,7 +76,7 @@ class Boggle extends React.Component {
           this.addWord(word)
         }
         else{
-          alert('Invalid ' + word);
+          alert(word + " is not a word.");
         } 
       })
   }
@@ -130,15 +131,24 @@ class Boggle extends React.Component {
   render () {
     return (
       <div>
-        <h1>Welcome to Boggel game</h1>
+        <div className="header"><h1>Welcome to Boggel game</h1></div>
         {this.state.isGameStarted ? <Timer timer={this.state.timer} /> : null}
-        {this.state.isGameStarted ? <button className="btn btn-primary" onClick={this.togglePopup}>End Game</button> : <StartGame start={this.startGame} disabled={this.state.showPopup} />}
+        {this.state.isGameStarted ? <button className="end-button btn btn-primary" onClick={this.togglePopup}>End Game</button> : <StartGame start={this.startGame} disabled={this.state.showPopup} />}
+        {this.state.isGameStarted ? <List words={this.state.words} /> : null }
         {this.state.isGameStarted ? <Board letters={this.state.letters} /> : null}
-        <CheckWord handleWord={this.handleWord} letters={this.state.letters} disabled={this.state.showPopup} />
-        <List words={this.state.words} />
-        <Score score={this.state.score} />
-        {this.state.showPopup ? <EndGame score={this.state.score} submitScore={this.submitScore} /> : null }
+        {this.state.isGameStarted
+          ? <div className="form-container">
+              <div className="form">
+                {this.state.isGameStarted ? <CheckWord handleWord={this.handleWord} letters={this.state.letters} disabled={this.state.showPopup} /> : null }
+              </div>
+              <div className="score-section">
+                {this.state.isGameStarted ? <Score score={this.state.score} /> : null }
+              </div>
+            </div>
+          : null
+        }
         <HighScore />
+        {this.state.showPopup ? <EndGame score={this.state.score} submitScore={this.submitScore} /> : null }
       </div>
     );
   }

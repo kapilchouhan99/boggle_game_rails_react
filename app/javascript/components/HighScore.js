@@ -16,7 +16,6 @@ class HighScore extends React.Component {
 
 
   createDivs = (highScores) => {
-    debugger
     return highScores.map((round, idx) => {
       return <ScoreRow key={idx} round={round} />
     })
@@ -26,7 +25,7 @@ class HighScore extends React.Component {
   render() {
     return (
       <div className="highscore-list" >
-        <header className="highscore-title">Highscores</header>
+        <header className="highscore-title">High Scores</header>
         <ol className='highscore-ul'>
           {this.state.scores}
         </ol>
