@@ -4,7 +4,7 @@ This is a [Ruby on Rails](https://rubyonrails.org/) and [React.js](https://react
 
 
 
-[Check out the demo on Heroku](https://mighty-stream-32546.herokuapp.com/)
+Here is [The demo on Heroku](https://mighty-stream-32546.herokuapp.com/)
 
 
 
